@@ -2,7 +2,6 @@ import ordenes.*
 import kotlin.random.Random
 
 class Cuadrante {
-    //var tierra =Array(3){Array<cuadrante?>(3){null} }
     var drones =Array<Dron?>(3){null}
     var mecanico : String = ""
     var supervisora : String = ""
@@ -46,5 +45,14 @@ class Cuadrante {
             misionesRealizadas++
         }
         return misionesRealizadas
+    }
+    fun seEstropeaDron(): Dron? {
+        var dado:Int=0
+        do {
+            dado = Random.nextInt(0,4)
+        }while(drones[dado] != null)
+
+        drones[dado]!!.operativo = false
+        return drones[dado]
     }
 }
