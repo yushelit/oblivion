@@ -1,4 +1,4 @@
-class Dron (val codigo:Int, val operativo:Boolean=true) {
+class Dron (val codigo:Int, var operativo:Boolean=true) {
     override fun toString(): String {
         if(operativo){
             return "Dron$codigo, estado: operativo"
